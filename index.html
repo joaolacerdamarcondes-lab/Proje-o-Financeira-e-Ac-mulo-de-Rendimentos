@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeção Financeira e Rendimentos - 1º Ano EM</title>
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Chart.js para os gráficos interativos -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>📈 Planejamento Financeiro & Evolução Patrimonial</h1>
+            <p class="subtitle">Projeto de Educação Financeira — 1º Ano do Ensino Médio</p>
+        </header>
+
+        <main>
+            <!-- Cartões de Resumo / Métricas Rápidas -->
+            <section class="metrics-grid">
+                <div class="metric-card">
+                    <span class="metric-title">Salário Inicial</span>
+                    <span class="metric-value">R$ 1.500,00</span>
+                </div>
+                <div class="metric-card highlight-card">
+                    <span class="metric-title">Rendimento Médio Estimado</span>
+                    <span class="metric-value">10% a.a.</span>
+                </div>
+                <div class="metric-card success-card">
+                    <span class="metric-title">Valor Final Acumulado</span>
+                    <span class="metric-value">R$ 23.980,00</span>
+                </div>
+            </section>
+
+            <!-- Seção da Tabela com Formatação e Destaques -->
+            <section class="card">
+                <div class="card-header">
+                    <h2>📋 Tabela de Evolução Financeira</h2>
+                    <p>Acompanhamento detalhado do salário, reservas de emergência e rendimentos ao longo dos anos.</p>
+                </div>
+                
+                <div class="table-responsive">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>Ano</th>
+                                <th>Salário</th>
+                                <th>Reserva Anual</th>
+                                <th>Valor Inicial</th>
+                                <th>Rendimento (10%)</th>
+                                <th>Valor Final</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Ano 1</strong></td>
+                                <td>R$ 1.500,00</td>
+                                <td>R$ 1.800,00</td>
+                                <td>R$ 0,00</td>
+                                <td class="rendimento"><em>R$ 0,00</em></td>
+                                <td class="valor-final">R$ 1.800,00</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ano 2</strong></td>
+                                <td>R$ 1.575,00</td>
+                                <td>R$ 1.890,00</td>
+                                <td>R$ 1.800,00</td>
+                                <td class="rendimento"><em>R$ 180,00</em></td>
+                                <td class="valor-final">R$ 3.870,00</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ano 3</strong></td>
+                                <td>R$ 1.653,75</td>
+                                <td>R$ 1.984,50</td>
+                                <td>R$ 3.870,00</td>
+                                <td class="rendimento"><em>R$ 387,00</em></td>
+                                <td class="valor-final">R$ 6.241,50</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ano 4</strong></td>
+                                <td>R$ 1.736,44</td>
+                                <td>R$ 2.083,73</td>
+                                <td>R$ 6.241,50</td>
+                                <td class="rendimento"><em>R$ 624,15</em></td>
+                                <td class="valor-final">R$ 8.949,38</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ano 5</strong></td>
+                                <td>R$ 1.823,26</td>
+                                <td>R$ 2.187,91</td>
+                                <td>R$ 8.949,38</td>
+                                <td class="rendimento"><em>R$ 894,94</em></td>
+                                <td class="valor-final">R$ 12.032,22</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ano 6</strong></td>
+                                <td>R$ 1.914,42</td>
+                                <td>R$ 2.297,31</td>
+                                <td>R$ 12.032,22</td>
+                                <td class="rendimento"><em>R$ 1.203,22</em></td>
+                                <td class="valor-final">R$ 15.532,75</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ano 7</strong></td>
+                                <td>R$ 2.010,14</td>
+                                <td>R$ 2.412,17</td>
+                                <td>R$ 15.532,75</td>
+                                <td class="rendimento"><em>R$ 1.553,28</em></td>
+                                <td class="valor-final">R$ 19.498,20</td>
+                            </tr>
+                            <tr class="row-highlight">
+                                <td><strong>Ano 8</strong></td>
+                                <td>R$ 2.110,65</td>
+                                <td>R$ 2.532,78</td>
+                                <td>R$ 19.498,20</td>
+                                <td class="rendimento"><em>R$ 1.949,82</em></td>
+                                <td class="valor-final-total">R$ 23.980,80</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Seção de Gráficos Visualizadores -->
+            <section class="card grid-charts">
+                <div class="chart-box">
+                    <h3>Crescimento do Valor Final</h3>
+                    <canvas id="lineChart"></canvas>
+                </div>
+                <div class="chart-box">
+                    <h3>Evolução dos Rendimentos (Juros Compostos)</h3>
+                    <canvas id="barChart"></canvas>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Desenvolvido para a disciplina de Matemática e Tecnologia • 1º Ano do Ensino Médio</p>
+        </footer>
+    </div>
+
+    <!-- JS Externo -->
+    <script src="script.js"></script>
+</body>
+</html>
